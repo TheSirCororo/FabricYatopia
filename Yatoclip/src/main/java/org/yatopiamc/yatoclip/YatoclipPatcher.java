@@ -163,7 +163,7 @@ public class YatoclipPatcher {
 		final byte[] patchBytes;
 		try (final InputStream in = YatoclipPatcher.class.getClassLoader().getResourceAsStream("patches/" + patchMetadata.name + ".patch")) {
 			if (in == null)
-				throw new FileNotFoundException();
+				throw new FileNotFoundException("patches/" + patchMetadata.name + ".patch");
 			patchBytes = IOUtils.toByteArray(in);
 		}
 		if (!patchMetadata.originalHash.equals(ServerSetup.toHex(digest.digest(originalBytes))) || !patchMetadata.patchHash.equals(ServerSetup.toHex(digest.digest(patchBytes))))
@@ -186,8 +186,10 @@ public class YatoclipPatcher {
 			try {
 				patchedZip.putNextEntry(new ZipEntry(sb.toString()));
 			} catch (ZipException e) {
-				if (e.getMessage().startsWith("duplicate entry"))
+				if (e.getMessage().startsWith("duplicate entry")) {
+					System.out.println("duplicate " + sb.toString());
 					continue;
+				}
 				throw e;
 			}
 		}
