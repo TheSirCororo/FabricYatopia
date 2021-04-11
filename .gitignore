@@ -61,3 +61,4 @@ last-paper
 !upstreamConfig/*
 !upstreamCommits/*
 testserver/
+cache/
