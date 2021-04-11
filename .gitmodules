@@ -39,4 +39,4 @@
 	path = Yatopia-Server
 [submodule "fabric-loader"]
 	path = fabric-loader
-	url = git@github.com:FabricMC/fabric-loader.git
+	url = https://github.com/FabricMC/fabric-loader
