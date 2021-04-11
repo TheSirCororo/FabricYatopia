@@ -31,14 +31,12 @@
 	path = upstream/Origami
 	url = https://github.com/Minebench/Origami.git
 	branch = 1.16
-
-[submodule "fabric-loader"]
-    path = fabric-loader
-    url = https://github.com/FabricMC/fabric-loader.git
-    branch = master
 	
 [submodule "Yatopia-API"]
 	path = Yatopia-API
 	
 [submodule "Yatopia-Server"]
 	path = Yatopia-Server
+[submodule "fabric-loader"]
+	path = fabric-loader
+	url = git@github.com:FabricMC/fabric-loader.git
